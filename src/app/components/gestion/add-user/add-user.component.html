@@ -1,0 +1,110 @@
+<section>
+    <div class="h">
+        <div class="main-content">
+            <div class="page-header clear-filter">
+
+                <app-navbar></app-navbar>
+                <div>
+
+                    <form (ngSubmit)="save(f)" #f="ngForm">
+
+                        <div class="card">
+
+                            <div class="card-header ">
+                                <br>
+                                <h4 class="card-title" style="color: #413e3e; font-size: x-large ;">Ajouter un Utilisateur </h4>
+                            </div>
+                            <br>
+                            <div class="card-body ">
+
+                                <div class="row">
+
+                                    <div class="col-md-5 pr-1" >
+                                        <div class="form-group has-label">
+                                            <label for="firstname"> firstname </label>
+                                            <input type="text" placeholder="firstname" class="form-control"
+                                                id="firstname" ngModel name="firstname" required #firstname="ngModel"
+                                                [ngClass]="{'is-invalid': firstname.invalid && (firstname.dirty || firstname.touched) }
+                                                && {'is-valid': firstname.valid && (firstname.dirty || firstname.touched)}" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 pr-1">
+                                        <div class="form-group has-label">
+                                            <label for="lastname"> lastname </label>
+                                            <input type="text" placeholder="Entre your lastname" class="form-control"
+                                                id="lastname" ngModel name="lastname" required #lastname="ngModel"
+                                                [ngClass]="{'is-invalid': lastname.invalid && (lastname.dirty || lastname.touched)}
+                                        && {'is-valid': lastname.valid && (lastname.dirty || lastname.touched)
+                                        }">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-5 pr-1">
+                                        <div class="form-group has-label">
+                                            <label for="email"> email </label>
+                                            <input type="email" placeholder="email" class="form-control" id="email"
+                                                ngModel name="email" required #email="ngModel" [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched)}
+                                    && {'is-valid': email.valid && (email.dirty || email.touched)
+                                    }" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 pr-1">
+                                        <div class="form-group has-label">
+                                            <label for="password"> password </label>
+                                            <input type="password" placeholder="password" class="form-control" id="password"
+                                                ngModel name="password" required #password="ngModel" [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}
+                                        && {'is-valid': password.valid && (password.dirty || password.touched)
+                                        }" />
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 pr-1 ">
+                                    <label for="photo">Photo</label>
+                                    <input type="file" accept="image/*" (change)="selectimage($event)"
+                                        placeholder="aucune image" class="form-control" />
+                                </div>
+
+
+                               <!--
+                                    <form [formGroup]="check">
+                                        <div *ngFor=" let d of domaines"
+                                        
+                                        [formGroupName]="d.nom" 
+                                        [formControl]="check.controls.checkArray"
+                                         class="field-checkbox">
+                                            <input type="checkbox" for="domaine" 
+                                            [value]="d.nom"
+                                            [ngModel]="d.nom"
+
+                                            (change)="onDomaineChange($event)"
+                                            
+                                        
+                                            />
+                                            <label [for]="d.nom">{{d.nom}}</label> 
+                                        </div>
+                                    </form>-->
+
+                                
+                            </div>
+
+                            <div class="card-footer text-right">
+                                <button [disabled]="!f.valid" class="btn"style="background-color: #bb407e;">Submit</button>
+                            </div>
+
+                            <br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,67 @@
+<section>
+    <div class="h">
+        <div class="main-content">
+            <div class="page-header clear-filter">
+             
+                <app-navbar></app-navbar>
+                <div>
+
+                    <form (ngSubmit)="save(f)" #f="ngForm" >
+
+                        <div class="card">
+
+                            <div class="card-header ">
+                                <br>
+                                <h4 class="card-title" style="color: #413e3e; font-size: x-large ;">Ajouter Question</h4>
+                            </div>
+                            <br>
+                            <div class="card-body ">
+
+                                <div class="row">
+                                    <div class="col-md-5 pr-1">
+
+                                        <div class="form-group has-label">
+                                            <label for="categorie" >Categorie </label>
+                                            <select class="form-control" 
+                                                ngModel 
+                                                name="categorie"  
+                                                required>
+                                                <option selected hidden ngValue="">Choisir une categorie</option>
+                                                <option *ngFor="let c of categories" [ngValue]="c" >{{c.nom}}</option>
+                                            </select>
+                                       </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="col-md-5 pr-1">
+                                <div class="form-group has-label">
+                                    <label for="text" > Question </label>
+                                    <textarea type="text"
+                                        placeholder="Posez votre question" 
+                                        class="form-control"
+                                        id="text"
+                                        ngModel
+                                        name="text"
+                                        required
+                                        #text="ngModel"
+                                        [ngClass]="{'is-invalid': text.invalid && (text.dirty || text.touched)}">
+                                    </textarea>
+                                </div></div>
+                            </div>
+
+                            <div class="card-footer text-right">
+                                <button  
+                                    type="submit" class="btn" style="background-color: #bb407e;">
+                                    
+                                    Envoyer
+                                </button>
+                            </div>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</section>

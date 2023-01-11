@@ -1,0 +1,58 @@
+<div style="background-color: rgba(78, 69, 69, 0.979); color: white;">
+  <app-navbar></app-navbar>
+
+</div>
+
+<br>
+
+<h2 style="text-align: center; color: brown;">Liste des questions</h2>
+<br> <button routerLink="/ajouterCategorie" class="btn btn-info m-4">
+  Ajouter
+</button>
+
+
+<div class="row">
+  <div class="col-md-5 pr-1">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Chercher question..." [(ngModel)]="filterTerm" />
+    </div></div> 
+    <div class="col-md-5 pr-1">
+
+      <div class="form-group">
+        <select class="form-control" ngModel name="categorie" required (ngModelChange)="filterTerm = $event.nom">
+          <option selected hidden ngValue="">Choisir une categorie...</option>
+          <option> toutes les categories</option>
+          <option *ngFor="let c of categories" [ngValue]="c">{{c.nom}}</option>
+        </select>
+
+      </div>
+
+      </div> 
+     
+    </div> 
+      <table class="table" style="text-align: center;">
+        <thead>
+          <th>ID</th>
+          <th>Question </th>
+          <th>Categorie</th>
+          <th>Actions</th>
+
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let q of questions | filter: filterTerm">
+            <td>{{q.id}}</td>
+            <td> {{ q.text }}</td>
+            <td> {{ q.categorie.nom }}</td>
+
+            <td>
+              
+              
+              <button routerLink="/ModifierQuestion/{{q.id}}" class="btn btn-success m-2"> Modifier</button>
+              <button (click)="delete(q)" class="btn btn-danger m-2"> Supprimer </button>
+
+
+            </td>
+          </tr>
+        </tbody>
+      </table>

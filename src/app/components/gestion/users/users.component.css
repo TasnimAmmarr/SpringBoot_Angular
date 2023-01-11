@@ -1,0 +1,44 @@
+.stuff-grid {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .thing-pane {
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    width: 270px;
+    height: 270px;
+    margin: 5px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px 1px 3px #333333;
+    cursor: pointer;
+ 
+  }
+  
+  .thing-info {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+  
+  }
+
+  /*-----------------*/
+  .footerr {
+    position: relative;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    /* background-color: red; */
+    /* color: white; */
+    /* text-align: center; */
+  }
+  /* body {position: relative;} */
+/* footer {position: absolute; bottom: 0; left: 0; right: 0 ; } */

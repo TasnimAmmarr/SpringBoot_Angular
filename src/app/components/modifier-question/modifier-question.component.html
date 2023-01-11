@@ -1,0 +1,54 @@
+<section>
+    <div class="h">
+        <div class="main-content">
+            <div class="page-header clear-filter">
+
+                <app-navbar></app-navbar>
+                <div>
+                    <div *ngIf="question">
+
+                        <form [formGroup]="formQuestion" (ngSubmit)="update()">
+
+                            <div class="card">
+
+                                <div class="card-header ">
+                                    <br>
+                                    <h4 class="card-title" style="color: #413e3e; font-size: x-large ;">Modifier Question
+                                    </h4>
+                                </div>
+                                <br>
+                                <div class="card-body ">
+                                    <div class="row">
+                                        <div class="col-md-5 pr-1">
+
+                                            <div class="form-group has-label">
+                                                <label for="categorie">Categorie</label>
+                                                <select class="form-control" [compareWith]="compareCat"
+                                                    formControlName="categorie">
+                                                    <option selected hidden ngValue="">choisir une categorie</option>
+                                                    <option *ngFor="let c of categories" [ngValue]="c">{{c.nom}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 pr-1">
+                                        <div class="form-group has-label">
+                                            <label for="text">Question</label>
+                                            <input type="text" class="form-control" id="text" formControlName="text" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <button [disabled]="!formQuestion.valid" class="btn">Submit </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

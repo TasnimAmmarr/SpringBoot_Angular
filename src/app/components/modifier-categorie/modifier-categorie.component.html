@@ -1,0 +1,40 @@
+<section>
+    <div class="h">
+        <div class="main-content">
+            <div class="page-header clear-filter">
+
+                <app-navbar></app-navbar>
+                <div>
+                    <div *ngIf="categorie">
+
+                        <form [formGroup]="formCat" (ngSubmit)="update()">
+
+                            <div class="card">
+
+                                <div class="card-header ">
+                                    <br>
+                                    <h4 class="card-title" style="color: #413e3e; font-size: x-large ;">Modifier Categorie
+                                    </h4>
+                                </div>
+                                <br>
+                                <div class="card-body ">
+                                    <div class="col-md-5 pr-1">
+                                        <div class="form-group has-label">
+                                            <label for="nom">Categorie</label>
+                                            <input type="text" class="form-control" id="nom" formControlName="nom" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <button [disabled]="!formCat.valid" class="btn">Submit </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

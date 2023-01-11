@@ -1,0 +1,43 @@
+<div >
+
+  <section>
+      <div class="h">
+          <div class="main-content">
+              <div class="page-header clear-filter">
+<div style="background-color: rgba(192, 137, 137, 0.979); ">
+    <app-navbar></app-navbar>
+  </div>
+  
+  <br>
+  <h2 style="text-align: center; color: brown;">Les Utilisateurs</h2>
+  
+  <p class="text-center" *ngIf="users.length <= 0 ">aucun utilisateur !</p>
+  <div class="stuff-grid" *ngIf="users.length >= 0">
+    <div class="thing-pane" *ngFor="let users of users">
+        <a routerLink="/Users/{{users.id}}" class="e card-link" style="-webkit-font-smoothing: antialiased;text-decoration: none; color: #202122;
+                            float: right;font-family: Montserrat,sans-serif!important;
+                            line-height: 32px;text-overflow: ellipsis; white-space: nowrap;">
+          
+            <img src="http://localhost:8081/restapiuser/getImage/{{users.id}}" />
+          
+        </a>
+      <div class="thing-info">
+        <h3>
+          {{ users.firstname }}
+          {{ users.lastname }}
+        </h3>
+        <h5>{{ users.email }}</h5>
+       
+    </div>
+  </div>
+  <div class="footerr" style="color: black;">
+   
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+
+</section>
+</div>

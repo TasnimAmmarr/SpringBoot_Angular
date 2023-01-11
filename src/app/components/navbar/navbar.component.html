@@ -1,0 +1,120 @@
+<div style="
+width:99%;
+justify-content:center;
+align-items:center;
+">
+
+  <div class="row">
+    <div class="col-md-2">
+      <a class="navbar-brand stylelogo">
+     <!--   <img routerLink="#" style=" margin-left: 20px;margin-top: 1px;margin-right: 5px;cursor: pointer;-webkit-font-smoothing: antialiased;text-decoration: none; " alt="Logo" src="assets/img/logoAsk.png"
+          class="pull-left"> -->
+        <div style="margin-left: 50px;margin-top: 13px;">
+          <span routerLink="/Home" class="stylelogo" style="font-weight: 550;cursor: pointer;-webkit-font-smoothing: antialiased;text-decoration: none;">Ask</span>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-10 pr-0">
+      <header class="h-100" >
+        <!-- style="background-color: #000;opacity: 0.5; height: 80%;"> -->
+        <mdb-navbar SideClass="navbar  navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav py-1"
+         
+          [containerInside]="false">
+          <!-- <mdb-navbar-brand> 
+        <a class="logo navbar-brand" href="#">  bg-dark
+          <strong>Navbar</strong>
+        </a>
+      </mdb-navbar-brand> -->
+          <links>
+            <ul class="navbar-nav mr-autos">
+              <li class="nav-item waves-light" mdbWavesEffect>
+                <a routerLink="/Home" class="nav-link"
+                  style="font-size:12px; font-family: Arial, Helvetica, sans-serif; font-weight: 550;">
+                  <i class="fas fa-home"></i>
+                  HOME
+                </a>
+              </li>
+
+              <li class="nav-item waves-light" mdbWavesEffect>
+                <a routerLink="/Gestion" class="nav-link"
+                  style="font-size:12px; font-family: Arial, Helvetica, sans-serif; font-weight: 550;">
+                  <i class="fas fa-home"></i>
+                  Admin
+                </a>
+              </li>
+             
+              <li class="nav-item dropdown btn-group" dropdown style="cursor: pointer;">
+                <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light"
+                  style="font-size: small; font-family: Arial, Helvetica, sans-serif; font-weight: 550;">
+                  <i class="fas fa-business-time"></i>
+                  GESTION
+                </a>
+                <div class="dropdown-menu  dropdown-menu-right" role="menu">
+                    <a class="dropdown-item" routerLink="/ajouterUser"
+                    style="font-size: small; font-family: Arial, Helvetica, sans-serif; font-weight: 530;"> Ajouter Utilisateur </a>
+
+                    <a class="dropdown-item" routerLink="/AjouterQuestion"
+                    style="font-size: small; font-family: Arial, Helvetica, sans-serif; font-weight: 530;">Ajouter Question</a>
+                    <a class="dropdown-item" routerLink="/ajouterReponse"
+                    style="font-size: small; font-family: Arial, Helvetica, sans-serif; font-weight: 530;">Ajouter Reponse</a>
+                   
+                </div>
+              </li>
+              <li class="nav-item dropdown btn-group" dropdown style="cursor: pointer;">
+                <a  click=serviceClick() dropdownToggle type="button" class="nav-link dropdown-toggle waves-light"
+                  style="font-size: small; font-family: Arial, Helvetica, sans-serif; font-weight: 550;">
+                  <i class="fas fa-business-time"></i>
+                  LISTES
+                </a>
+
+                <div class="dropdown-menu  dropdown-menu-right" role="menu">
+                  <a routerLink="/Users" class="dropdown-item" 
+                    style="font-size: small;font-family: Arial, Helvetica, sans-serif; font-weight: 530;">Utilisateurs</a>
+             
+                  
+                    <a routerLink="/Categories" class="dropdown-item" 
+                    style="font-size: small; font-family: Arial, Helvetica, sans-serif; font-weight: 530;">Categories</a>
+                  
+                  <a class="dropdown-item" routerLink="/Questions"
+                    style="font-size: small; font-family: Arial, Helvetica, sans-serif; font-weight: 530;">Questions
+                  </a>
+
+                  <a class="dropdown-item" routerLink="/Reponses"
+                  style="font-size: small; font-family: Arial, Helvetica, sans-serif; font-weight: 530;">Reponses
+                </a>
+                </div>
+              </li>
+            </ul>     
+          </links>
+        </mdb-navbar>
+        <!-- Main -->
+        <div class="view intro-2">
+          <div class="full-bg-img">
+            <div class="mask rgba-purple-light flex-center">
+              <div class="container text-center white-text wow fadeInUp">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.Main -->
+      </header>
+    </div>
+  </div>
+</div>
+  <!--Main Navigation-->
+
+  <!--Main Layout-->
+  <main class="text-center py-5">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <!--Main Layout-->

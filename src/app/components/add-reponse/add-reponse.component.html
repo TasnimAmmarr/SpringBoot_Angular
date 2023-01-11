@@ -1,0 +1,88 @@
+<section>
+    <div class="h">
+        <div class="main-content">
+            <div class="page-header clear-filter">
+             
+                <app-navbar></app-navbar>
+                <div>
+
+                    <form (ngSubmit)="save(f)" #f="ngForm">
+
+                        <div class="card">
+
+                            <div class="card-header ">
+                                <br>
+                                <h4 class="card-title" style="color: #413e3e; font-size: x-large ;">Ajouter une Réponse </h4>
+                            </div>
+                            <br>
+                            <div class="card-body ">
+
+                                <div class="row">
+                                    <div class="col-md-5 pr-1">
+
+                                        <div class="form-group has-label">
+                                            <label for="questions" >Question </label>
+                                            <select class="form-control" 
+                                                ngModel 
+                                                name="questions" 
+                                                required
+                                                #questions="ngModel"
+                                                [ngClass]="{'is-invalid': questions.invalid && (questions.dirty || questions.touched)}
+                                            && {'is-valid': questions.valid }">
+                                                <option selected hidden ngValue="">Choisir une Question</option>
+                                                <option *ngFor="let q of Questions" [ngValue]="q" >{{q.text}}</option>
+                                            </select>
+                                       </div>
+                                    </div>
+
+                                  
+                                        <div class="col-md-5 pr-1">
+                                        <div class="form-group has-label">
+                                        <label for="votes"> Votes </label>
+                                        <input type="number"
+                                            class="form-control" placeholder="Entrer votes"
+                                            id="votes"
+                                            ngModel
+                                            name="votes"
+                                            required
+                                            #votes="ngModel"
+                                            [ngClass]="{'is-invalid': votes.invalid && (votes.dirty || votes.touched)}
+                                            && {'is-valid': votes.valid && (votes.dirty || votes.touched)
+                                            }
+                                            ">
+                                </div></div> 
+                        
+                                <div class="col-md-5 pr-1">
+                                <div class="form-group has-label"> <br>
+                                    <label for="reponse" > Reponse </label>
+                                    <textarea type="text"
+                                        placeholder="Ajoutez votre reponse" 
+                                        class="form-control"
+                                        id="reponse"
+                                        ngModel
+                                        name="reponse"
+                                        required
+                                        #text="ngModel"
+                                        [ngClass]="{'is-invalid': text.invalid && (text.dirty || text.touched)}
+                                        && {'is-valid': text.valid && (text.dirty || text.touched)
+                                        }
+                                        ">
+                                    </textarea>
+                                </div></div>
+                             
+                            </div>
+                            </div>
+
+                            <div class="card-footer text-right">
+                             
+                                <button [disabled]="!f.valid" class="btn" style="background-color: #bb407e;">Submit</button>
+                            </div>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</section>

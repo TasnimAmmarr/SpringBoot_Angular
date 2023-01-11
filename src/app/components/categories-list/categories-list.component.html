@@ -1,0 +1,39 @@
+<div style="background-color: rgba(69, 77, 78, 0.979); color: white;">
+    <app-navbar></app-navbar>
+  
+  </div>
+  
+  <br>
+  
+  <h2 style="text-align: center; color: brown;">Liste des categories</h2>
+  <br> <button routerLink="/ajouterCategorie" class="btn btn-info m-4">
+    Ajouter
+  </button>
+ 
+
+        <table class="table" style="text-align: center;">
+          <thead>
+            <th>ID</th>
+            <th>Categorie</th>
+            <th>Action </th>
+  
+          </thead>
+          <tbody>
+  
+            <tr *ngFor="let c of categories">
+              <td>{{c.id}}</td>
+              <td> {{ c.nom }}</td>
+             
+  
+              <td> <button (click)="delete(c)" class="btn btn-danger m-2">
+                  Supprimer
+                </button>
+
+                <button routerLink="/ModifierCategorie/{{c.id}}" class="btn">
+                  Modifier
+                </button>
+               
+              </td>
+            </tr>
+          </tbody>
+        </table>
